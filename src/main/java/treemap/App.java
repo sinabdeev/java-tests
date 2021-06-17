@@ -3,7 +3,6 @@ package treemap;
 import java.util.Comparator;
 import java.util.Map;
 import java.util.TreeMap;
-
 import java.util.logging.Logger;
 
 public class App {
@@ -11,7 +10,11 @@ public class App {
     private static final Logger LOGGER = Logger.getLogger(App.class.getName());
 
     public static void run() {
+
+        // TreeMap<Person, Integer> map = new TreeMap<>(); // ClassCastException: Person cannot be cast to Comparable
+
         TreeMap<Person, Integer> map = new TreeMap<>(Comparator.comparingInt(o -> o.age));
+
         map.put(new Person("John", "Smith", 17), 0);
         map.put(new Person("Ivan", "Petrenko", 65), 0);
         map.put(new Person("Pedro", "Escobar", 32), 0);
